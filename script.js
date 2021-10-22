@@ -98,14 +98,18 @@ var specialCharacters = [
 ];
 
 var pwLength = prompt("How many characters would you like your password to be? (Must be 8-128)")
+Number()
+pwLength = Number(pwLength)
 console.log(pwLength);
 
-while (prompt.pwlength >=8 && prompt.pwLength <=128){
+if (pwLength >= 8 && pwLength <= 128){
   window.confirm('Would you like to use Uppercase characters?');
   window.confirm('Would you like to use lowercase characters?');
   window.confirm('Would you like to use numbers?');
   window.confirm('Would you like to use special characters?');
+
 };
+
 
 
   
