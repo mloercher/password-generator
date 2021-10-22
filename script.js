@@ -76,6 +76,7 @@ var upperCaseCharacters = [
     '@',
     '%',
     '+',
+    '\\',
     '/',
     "'",
     '!',
@@ -100,62 +101,16 @@ var upperCaseCharacters = [
   //var characters = prompt ("how many characters must your password be?");
   
   
-  // Get references to the #generate element
+  // Gnerate password
   function generatePassword(){
-  
-  
+      
+    const totalLength = prompt('How many characters would you like to use?');
+    if(totalLenghth >= 8 && totalLength <= 128) {
+        alert(`Your new Password will be ${totalLength}
+        characters long`);
+    }  
   }
-  
-  function getUserOptions () {
-  
-    var userChoices = {};
-  
-    //check user options
-    
-      //ask for length
-      var length = prompt("how many characters must your password be? (between 8-128 for best security)")
-  
-      ///To-Do (later): validate length
-    
-      //sign to userOptions
-      userChoices.length = length;
-  
-      //ask for upperCase
-      var upperCase = confirm("do you want to use Upper Case characters?")
-  
-      //sign to userOptions
-      userChoices.upperCase = upperCase;
-  
-      //ask for lowerCase
-      var lowerCase = confirm('do you want to use lowercase characters?')
-  
-      //sign to userOptions
-      userChoices.lowerCase = lowerCase;
-  
-      //ask for aplhanumerica
-      var numeric = confirm('do you want to use numeric characters?')
-  
-      //sign to userOptions
-      userChoices.numeric = numeric;
-  
-      //ask for special characters
-      var special = confirm('do you want to use special characters?')
-  
-      //sign to userOptions
-  
-      userChoices.special = special;
-  
-  
-  
-  
-  
-  
-  
-  
-    console.log(parseInt(length))
-  }
-  
-  
+
   // Write password to the #password input
   function writePassword() {
   
