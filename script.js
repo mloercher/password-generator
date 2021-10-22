@@ -105,17 +105,59 @@ var upperCaseCharacters = [
   function generatePassword(){
       
     const totalLength = prompt('How many characters would you like to use?');
-    if(totalLenghth >= 8 && totalLength <= 128) {
+    if(totalLength >= 8 && totalLength <= 128) {
         alert(`Your new Password will be ${totalLength}
         characters long`);
     }  
-  }
+   // var options = {
+     //   hasNumber : window.confirm('Would you like to include numbers?'),
+       // hasUppercase : window.confirm('Would you like to include Upper case letters?'),
+        //hasLowercase : window.confirm('Would you like to include Lower case letters?'),
+        //has Symbol : window.confirm('Would you like to include Special characters?'),
+    //};
+  
+    //if(options.hasNumber === false && options.hasUppercase === false && options.hasLowercase === false && options.hasSymbol === false)
+
+    let upper = confirm("Would you like to include Upper case letters?");
+    let lower = confirm("Would you like to include Lower case letters?");
+    let symbol = confirm("Would you like to include Special characters?");
+    let number = confirm("Would you like to include numbers?");
+
+    let allChars = "";
+    let password = "";
+
+    if(upper) {
+        allChars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if(lower) {
+        allChars += "abcdefghijklmnopqrstuvwxyz";
+    }
+    if (symbol) {
+        allChars += "@%+\\/'!#$^?:,)(}{][~-_."
+    }
+    if (number) {
+        allChars += "0123456789";
+    }
+
+    //generate pw macthing selected values 
+    //create a for loop to iterate selected values
+    //return the generated password
+
+    else {
+        alert('Please correctly answer the password criteria prompts :)')
+    }
+
+
+
+
+}
+
 
   // Write password to the #password input
   function writePassword() {
   
     //get user options
-    var userOptions = getUserOptions();
+    //var userOptions = getUserOptions();
     
   
     var password = generatePassword();
