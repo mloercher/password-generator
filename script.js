@@ -97,24 +97,22 @@ var specialCharacters = [
   '.'
 ];
 
-var pwLength = prompt("How many characters would you like your password to be? (Must be 8-128)")
-Number()
+var pwLength = function (){
+  ("How many characters would you like your password to be? (Must be 8-128)");
+  Number()
 pwLength = Number(pwLength)
-console.log(pwLength);
+};
+
+if (pwLength < 8 || pwLength > 128){
+  alert("Please choose a value between 8-128 characters!")
+};
 
 if (pwLength >= 8 && pwLength <= 128){
   window.confirm('Would you like to use Uppercase characters?');
   window.confirm('Would you like to use lowercase characters?');
   window.confirm('Would you like to use numbers?');
   window.confirm('Would you like to use special characters?');
-
 };
-
-
-
-  
-
-
 
 
 // Get references to the #generate element
