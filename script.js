@@ -196,25 +196,41 @@ const pwLength = window.prompt("How many characters would you like your password
 if(pwLength < 8 || pwLength > 128) {
   alert('Please select a valid character length!');
   }else {
-    let upper = confirm('Would you like to use Uppercase characters?');
-    let lower = confirm('Would you like to use lowercase characters?');
-    let numeric = confirm('Would you like to use numeric characters?');
-    let special = confirm('Would you like to use special characters?');
+    var upper = confirm('Would you like to use Uppercase characters?');
+    var lower = confirm('Would you like to use lowercase characters?');
+    var numeric = confirm('Would you like to use numeric characters?');
+    var special = confirm('Would you like to use special characters?');
   }
-  let allChars = '';
-
-if (confirm.upper) {
+  let allChars ='';
+  
+if (upper) {
   allChars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
-if (confirm.lower) {
+if (lower) {
   allChars += "abcdefghijklmnopqrstuvwxyz";
 }
-if (confirm.numeric) {
+if (numeric) {
   allChars += "0123456789";
 }
-if (confirm.special) {
+if (special) {
   allChars += "@%+\\/'!#$^?:,)(}{][~-_.";
 }
+
+if(upper === false && lower === false && numeric === false && special === false){
+  alert('Please select valid password parameters!');
+}
+
+
+console.log('allChars:',allChars)
+var outputString ="";
+for (var i = 0; i < pwLength; i++) {
+outputString += allChars.charAt(Math.floor(Math.random() * allChars.length));
+console.log(outputString);
+
+}
+return outputString;
+
+//else 
 
 
 //Create for loop to iterate over user chosen characters
