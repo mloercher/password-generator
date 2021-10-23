@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 //Array of Uppercase characters to be included in PW
+
 var upperCaseCharacters = [
   'A',
   'B',
@@ -98,22 +99,138 @@ var specialCharacters = [
   '_',
   '.'
 ];
+/*var allChars = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '@',
+  '%',
+  '+',
+  '\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.'
 
-// GENERATE PASSWORD FUNCTION!!!!!!!!!!!!!!!!!!!
+]*/
+
+// GENERATE PASSWORD FUNCTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 function generatePassword() {
 
-// 
+// Getting User PW parameters
 const pwLength = window.prompt("How many characters would you like your password to be?");
 if(pwLength < 8 || pwLength > 128) {
   alert('Please select a valid character length!');
   }else {
-    confirm('Would you like to use Uppercase characters?');
-    confirm('Would you like to use lowercase characters?');
-    confirm('Would you like to use numeric characters?');
-    confirm('Would you like to use special characters?');
+    let upper = confirm('Would you like to use Uppercase characters?');
+    let lower = confirm('Would you like to use lowercase characters?');
+    let numeric = confirm('Would you like to use numeric characters?');
+    let special = confirm('Would you like to use special characters?');
   }
+  let allChars = '';
+
+if (upper) {
+  allChars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+}
+if (lower) {
+  allChars += "abcdefghijklmnopqrstuvwxyz";
+}
+if (numeric) {
+  allChars += "0123456789";
+}
+if (special) {
+  allChars += "@%+\\/'!#$^?:,)(}{][~-_.";
 }
 
+
+
+
+}
+// END GENERATE PASSWORD FUNCTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+/*if ALL values are true, generate random pw using allChars
+if (confirm.upper === true, confirm.lower === true, confirm.numeric === true, confirm.special === true){
+  Math.floor(Math.random(allChars) * (1 + High - Low)) + Low;
+}*/
 
 
 // Write password to the #password input
