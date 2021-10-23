@@ -1,7 +1,4 @@
 // Assignment code here
-var generateBtn = document.querySelector("#generate");
-
-//Array of Uppercase characters to be included in PW
 var upperCaseCharacters = [
   'A',
   'B',
@@ -99,29 +96,28 @@ var specialCharacters = [
   '.'
 ];
 
-// GENERATE PASSWORD FUNCTION!!!!!!!!!!!!!!!!!!!
-function generatePassword() {
+// Get references to the #generate element
 
-// 
-const pwLength = window.prompt("How many characters would you like your password to be?");
-if(pwLength < 8 || pwLength > 128) {
-  alert('Please select a valid character length!');
-  }else {
-    confirm('Would you like to use Uppercase characters?');
-    confirm('Would you like to use lowercase characters?');
-    confirm('Would you like to use numeric characters?');
-    confirm('Would you like to use special characters?');
-  }
-}
+let pwLength = window.prompt("How many characters would you like your password to be?")
+console.log(pwLength);
+pwLength = Number(pwLength);
+
+if (pwLength >= 8 && pwLength <= 128){
+  window.confirm('Would you like to use Uppercase characters?');
+  window.confirm('Would you like to use lowercase characters?');
+  window.confirm('Would you like to use numbers?');
+  window.confirm('Would you like to use special characters?');
+};
 
 
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+passwordText.value = password;
 
 }
 
