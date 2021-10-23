@@ -203,19 +203,23 @@ if(pwLength < 8 || pwLength > 128) {
   }
   let allChars = '';
 
-if (upper) {
+if (confirm.upper) {
   allChars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
-if (lower) {
+if (confirm.lower) {
   allChars += "abcdefghijklmnopqrstuvwxyz";
 }
-if (numeric) {
+if (confirm.numeric) {
   allChars += "0123456789";
 }
-if (special) {
+if (confirm.special) {
   allChars += "@%+\\/'!#$^?:,)(}{][~-_.";
 }
 
+
+//Create for loop to iterate over user chosen characters
+//return the generated password
+  //return password;
 
 
 
