@@ -12,6 +12,7 @@ let lower
 let numeric
 let special
 
+//Assinging functions for character "buckets"
 const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
 const numericChars = "0123456789";
@@ -28,7 +29,7 @@ const specialChars = "@%+\\/'!#$^?:,)(}{][~-_.";
   
   let guaranteedChars = "";
   
-
+//Collecting user password parameters and building allChars and guaranteedChars "buckets"
   if (upper) {
     guaranteedChars += upperCaseChars.charAt(Math.floor(Math.random() * upperCaseChars.length))
      allChars += upperCaseChars;
@@ -48,6 +49,8 @@ const specialChars = "@%+\\/'!#$^?:,)(}{][~-_.";
   }
 
  console.log(guaranteedChars);
+
+ //check to make sure user selects at least 1 of the character parameters
   if (
     upper === false &&
     lower === false &&
@@ -60,7 +63,7 @@ const specialChars = "@%+\\/'!#$^?:,)(}{][~-_.";
   //console.log("allChars:", allChars);
   var outputString = guaranteedChars;
 
-
+// for loop which randomly selects characters from chosen "buckets"
   for (var i = 0; i < (pwLength - guaranteedChars.length); i++) {
     outputString += allChars.charAt(
       Math.floor(Math.random() * allChars.length))
@@ -71,24 +74,13 @@ const specialChars = "@%+\\/'!#$^?:,)(}{][~-_.";
     console.log(outputString);
   }
 
-
-
-
-
+//return password;
   return outputString;
 
-  //else
-
-  //Create for loop to iterate over user chosen characters
-  //return the generated password
-  //return password;
 }
 // END GENERATE PASSWORD FUNCTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-/*if ALL values are true, generate random pw using allChars
-if (confirm.upper === true, confirm.lower === true, confirm.numeric === true, confirm.special === true){
-  Math.floor(Math.random(allChars) * (1 + High - Low)) + Low;
-}*/
+
 
 // Write password to the #password input
 function writePassword() {
