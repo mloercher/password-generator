@@ -24,3 +24,5 @@
 ![random-password](images/final-pw.png)
 
 ***Password is GUARANTEED to contain AT LEAST one character of each type user selects.
+
+Link to deployed app: https://mloercher.github.io/password-generator/
